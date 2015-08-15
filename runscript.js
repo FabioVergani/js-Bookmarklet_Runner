@@ -1,15 +1,12 @@
 void((function($w){'use strict';
- var e, o=$w, p='NameSpaceUniqueId';
+ var e,o=$w,p='NameSpaceUniqueId';
  if((p in o) && o.hasOwnProperty(p) && (e=o[p]) instanceof Function){
-	e(o,2);
+	e(o);
  }else if(!e||Object.getOwnPropertyDescriptor(o,p).writable){
+	(e=o[p]=function(global){
 
-	(e=o[p]=function scope(global,i){
+		log(this.runs++);
 
-		log(i);
-
-	})(o,1);
-
+	}.bind({runs:0}))(o);
  };
 })(window));
-

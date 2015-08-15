@@ -6,6 +6,6 @@ void((function($w){'use strict';
  }else if(!e||Object.getOwnPropertyDescriptor(o,p).writable){
 	e=o[p]='test';
  };
- //e(o);
+ e=null;
 })(window));
 //END.

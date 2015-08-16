@@ -1,25 +1,18 @@
 /*<—>*/
 
-		<button onclick="
+<button onclick="
 void((function($w){'use strict';
- var o=$w, p='NameSpaceUniqueIdz', e=Object.getOwnPropertyDescriptor(o,p);
-
+ var p='NameSpaceUniqueId', o=$w, O=o.Object, e=O.getOwnPropertyDescriptor(o,p);
  if(e && !e.writable){
-
-	log(2);e=o[p];log(e,Object.isFrozen(e))
-
+	e=o[p];
  }else{
-
-	log(1)
-	Object.defineProperty(o,p,{'writable':false,'value':(e=new function scope(global){log(444)})});
-
-Object.freeze(e);
-log(e,Object.isFrozen(e))
-
-
-
-
+	O.defineProperty(o,p,{'writable':false,'value':(e=function(gs){log(this.runs++);
+		var win=gs;
+	}.bind({runs:0}))});
+	O.freeze(e);
  };
+ e(o);
 })(window));">TEST</button>
+
 
 

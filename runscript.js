@@ -1,12 +1,12 @@
 void((function($w){'use strict';
- var e,o=$w,p='NameSpaceUniqueId';
- if((p in o) && o.hasOwnProperty(p) && (e=o[p]) instanceof Function){
-	e(o);
- }else if(!e||Object.getOwnPropertyDescriptor(o,p).writable){
-	(e=o[p]=function(global){
-
-		log(this.runs++);
-
-	}.bind({runs:0}))(o);
+ var p='NameSpaceUniqueId', o=$w, O=o.Object, e=O.getOwnPropertyDescriptor(o,p);
+ if(e && !e.writable){
+	e=o[p];
+ }else{
+	O.defineProperty(o,p,{'writable':false,'value':(e=function(gs){//log(this.runs++);
+		var win=gs;
+	}.bind({runs:0}))});
+	O.freeze(e);
  };
+ e(o);
 })(window));

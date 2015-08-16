@@ -1,0 +1,20 @@
+
+
+/*<—>*/
+
+<button onclick="
+void((function($w){'use strict';
+ var p='NameSpaceUniqueIdaa', o=$w, O=o.Object, e=O.getOwnPropertyDescriptor(o,p);
+ if(e && !e.writable){
+	e=o[p];
+ }else{
+	O.defineProperty(o,p,{writable:false,value:(e=function(gs){console.log(++this.runs);console.dir(this);
+		var win=gs;
+	}.bind(O.create(null,{runs:{writable:true,value:0,}})))});
+	O.freeze(e);
+ };
+ e(o);
+})(window));">TEST</button>
+
+
+

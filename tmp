@@ -1,0 +1,10 @@
+void((function(A,B,C){'use strict';
+ var f=C, p=B, o=A, e=Object.getOwnPropertyDescriptor(o,p);
+ if(e && !e.writable){
+	log(11);
+ }else{
+	log(22);f();
+	Object.defineProperty(o,p,{'writable':false,'value':f});
+ };
+})(window,'NameSpaceUniqueId',function(){'use strict';/*<—>*/}));
+

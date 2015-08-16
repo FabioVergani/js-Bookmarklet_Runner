@@ -1,10 +1,25 @@
-void((function(A,B,C){'use strict';
- var f=C, p=B, o=A, e=Object.getOwnPropertyDescriptor(o,p);
+/*<—>*/
+
+		<button onclick="
+void((function($w){'use strict';
+ var o=$w, p='NameSpaceUniqueIdz', e=Object.getOwnPropertyDescriptor(o,p);
+
  if(e && !e.writable){
-	log(11);
+
+	log(2);e=o[p];log(e,Object.isFrozen(e))
+
  }else{
-	log(22);f();
-	Object.defineProperty(o,p,{'writable':false,'value':f});
+
+	log(1)
+	Object.defineProperty(o,p,{'writable':false,'value':(e=new function scope(global){log(444)})});
+
+Object.freeze(e);
+log(e,Object.isFrozen(e))
+
+
+
+
  };
-})(window,'NameSpaceUniqueId',function(){'use strict';/*<—>*/}));
+})(window));">TEST</button>
+
 

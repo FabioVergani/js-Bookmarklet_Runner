@@ -35,7 +35,4 @@ const process=function(W){'use strict';
  };
  e(o);
 };//(window);
-//===============================function (){};
-//log.dir();false
-//dir(arguments);
-//if(){}else{}
+//============

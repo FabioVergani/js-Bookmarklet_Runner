@@ -10,28 +10,19 @@ function process(thewindow) {'use strict';
 		CreateRawObject=O.create.bind(null,null);
 		log=log('clear','dir','count','info');
 		O.defineProperty(o,p,{
-		 value:(e=function(global){'use strict';
-		 function at(e, s, h, b){e.addEventListener(s, function f(x){var o=x,e=o.target,s=o.type;h(e, s, o, f);e.removeEventListener(s, f);},b);}
-		 var $w=global,$d=$w.document,drs=$d.readyState,dfl='load',dcl='DOMContentLoaded',
-
-		 load=function(e,s,o,f){
-			log.info('2/2 on', dfl);
-			//log.dir(e);
-		 },
-
-		 ready=function(e,s,o,f){
-			log.info('1/2 on',afterload?dfl:dcl);
-			var afterload=(s===1);
-			if(afterload){
-			 load($w,1);
-			}else{
-			 at($w,dfl,load);
+		 value:(e=function(G){'use strict';
+		 function at(e,s,h,b){e.addEventListener(s,function f(x){var o=x,e=o.target,s=o.type;h(e,s,o);e.removeEventListener(s,f);},b);}//b:false
+		 var g=G,d=g.document,drs=d.readyState,dfl='load',dcl='DOMContentLoaded',
+		 R=function(e,s){var w=e,k=(s===1),L=function(e){
+			 //log.dir(e);
+			 log.info('2/2 on',dfl);
 			};
+			if(k){L(w);}else{at(w,dfl,L);};log.info('1/2 on',k?dfl:dcl);
 		 };
 		 //
 		 log.clear();log.count('•'+p);log(((e.compatMode==='BackCompat')?'quirks':'standard'),'mode');
 		 //
-		 if(drs==='complete'){ready($d,1);}else{at($d,drs==='interactive'?dfl:dcl,ready);};
+		 if(drs==='complete'){R(g,1);}else{at(g,drs==='interactive'?dfl:dcl,R);};
 		 }.bind(Cb=null))});
 		O.freeze(e);
 	 }else{e=Cb('error').bind('locked!');};
@@ -40,7 +31,11 @@ function process(thewindow) {'use strict';
 };//(window);
 //===============================
 
+
+//e,s,o >(e:element/s:event-tipe/o:event-object)
+
+//.document
 //function (){};
 //false
-//dir(arguments);
+//log.dir(arguments);
 //if(){}else{}
